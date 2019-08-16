@@ -4,35 +4,29 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
+import org.junit.Test;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
 public class AppTest 
     extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+   @Test
+    public void twoAndThreeIsFive() throws Exception {
+        final long result = new Calculator().addFucn(2, 3);
+        assertThat(result, is(5L));
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    @Test
+    public void threeMinusTwoIsOne() throws Exception {
+        final long result = new Calculator().subFucn(2, 3);
+        assertThat(result, is(1L));
+    }
+    
+    @Test
+    public void threeXThreeIsNine() throws Exception {
+        final long result = new Calculator().mulFucn(3, 3);
+        assertThat(result, is(9L));
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
 }
