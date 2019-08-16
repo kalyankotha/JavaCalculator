@@ -35,7 +35,7 @@ private long first;
 	
 	public long mulFucn(long first, long second){
 		
-		return first/second;
+		return first*second;
 	}
 
 }
